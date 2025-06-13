@@ -1,4 +1,4 @@
-/* Base Styles */
+ /* Base Styles */
 :root {
     --primary-color: #ff85a2;
     --primary-light: #ffccd5;
@@ -158,14 +158,21 @@ a {
 }
 
 .hamburg-menu {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
     font-size: 1.5rem;
     color: var(--primary-color);
     cursor: pointer;
     transition: var(--transition);
+    border-radius: 10px;
 }
 
 .hamburg-menu:hover {
+    /*background-color: var(--primary-light);*/
     transform: rotate(90deg);
 }
 
@@ -1051,4 +1058,47 @@ a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.remove-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.remove-btn:hover {
+    transform: scale(1.2);
+    color: #e60000;
+}
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff5f5;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-gif {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+#loading-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
 }
