@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Show loading state
             ordersContainer.innerHTML = '<div class="loading-spinner"><i class="fas fa-spinner fa-spin"></i> Loading orders...</div>';
             
-            const response = await fetch('/api/orders');
+            const response = await fetch('https://whimsy-api.onrender.com/api/orders');
             const orders = await response.json();
             
             ordersContainer.innerHTML = '';
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
                 button.disabled = true;
                 
-                const response = await fetch(`/api/orders/${orderId}`, {
+                const response = await fetch(`https://whimsy-api.onrender.com/api/orders/${orderId}`, {
                     method: 'DELETE'
                 });
                 
