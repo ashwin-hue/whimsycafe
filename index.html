@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Whimsy Cafe - Magical Milkshakes</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <!-- Floating Cart Button -->
+    <div class="floating-cart" id="floating-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <nav class="navbar nav-container">
+  <div class="logo-container">
+    <img src="https://res.cloudinary.com/dvda53sdv/image/upload/v1749719802/logo-removebg-preview_urkmnk.png" alt="Whimsy Cafe Logo" class="logo-img">
+    <span class="logo-text">WHIMSY CAFE</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#menu"><i class="fas fa-glass-whiskey"></i> Menu</a></li>
+    <li><a href="#testimonials"><i class="fas fa-star"></i> Reviews</a></li>
+    <li><a href="#about"><i class="fas fa-heart"></i> Our Story</a></li>
+    <li><a href="#contact"><i class="fas fa-map-marker-alt"></i> Find Us</a></li>
+  </ul>
+
+  <!-- Hamburger icon -->
+  <div id="hamburg-menu" class="hamburg-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Mobile nav menu -->
+  <ul id="hm-links" class="mobile-nav-links">
+    <li><a href="#menu"><i class="fas fa-glass-whiskey"></i> Menu</a></li>
+    <li><a href="#testimonials"><i class="fas fa-star"></i> Reviews</a></li>
+    <li><a href="#about"><i class="fas fa-heart"></i> Our Story</a></li>
+    <li><a href="#contact"><i class="fas fa-map-marker-alt"></i> Find Us</a></li>
+  </ul>
+</nav>
+
+
+    <header class="hero">
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1>Magical Milkshakes for Every Mood</h1>
+            <p class="hero-subtitle">Whip into a world of flavor — fresh, dreamy, delicious!</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn-primary">Explore Menu</a>
+                <a href="#about" class="btn-secondary">Our Story</a>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="deco-circle pink"></div>
+            <div class="deco-circle purple"></div>
+            <div class="deco-circle peach"></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-container">
+                <h2><i class="fas fa-heart"></i> Our Story</h2>
+                <p>
+                    Whimsy Café began as a heartfelt idea shared by four school friends — a vision born from our shared love of flavor, creativity, and friendship. It all started with playful experiments and late-night chats about creating something of our own.
+                </p>
+                <p>
+                    With no big investment and no fancy setup, we launched a humble milkshake business, handcrafting each drink with passion and joy. From a small kitchen to our very first orders, we've built everything from the ground up — with love.
+                </p>
+                <p>
+                    Though we're still a small name, the warmth and support of our community fuels us every day. Every kind word, every returning customer, every cheer — it reminds us that we're building more than just a brand. We're building a dream.
+                </p>
+                <p class="signature">
+                    So, sip the dream. Taste the journey. <br>
+                    And welcome to Whimsy Café.
+                </p>
+                <div class="about-watermark">
+                    <img src="https://res.cloudinary.com/dvda53sdv/image/upload/v1749719802/logo-removebg-preview_urkmnk.png" alt="Whimsy Watermark">
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section class="menu" id="menu">
+            <div class="section-header">
+                <h2><i class="fas fa-glass-whiskey"></i> Our Magical Menu</h2>
+                <p>Each sip is a spell of deliciousness</p>
+            </div>
+            <div class="drinks-container" id="drinks-container">
+                <!-- Dynamic drinks go here -->
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section class="cart-section" id="cart-section">
+            <div class="cart-instructions">
+                <h3><i class="fas fa-info-circle"></i> How to Order</h3>
+                <ol>
+                    <li>Browse our magical menu and click "Add to Order" on your favorites</li>
+                    <li>Review your selections in the cart</li>
+                    <li>Click the "Checkout" button when you're ready</li>
+                    <li>Fill out your details and we'll prepare your order with love!</li>
+                </ol>
+            </div>
+            <div class="cart" id="cart">
+                <div class="cart-header">
+                    <h2><i class="fas fa-shopping-cart"></i> Your Order</h2>
+                    <button class="close-cart" id="close-cart">&times;</button>
+                </div>
+                <div class="cart-items" id="cart-items"></div>
+                <div class="cart-total">
+                    <span>Total: ₹</span><span id="cart-total">0.00</span>
+                </div>
+                <button id="checkout-btn" class="btn-primary">Checkout <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-header">
+                <h2><i class="fas fa-map-marker-alt"></i> Visit Us</h2>
+                <p>We'd love to see you in person or hear from you!</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-watermark">
+                        <img src="https://res.cloudinary.com/dvda53sdv/image/upload/v1749747065/CATS_rqph8q.gif" alt="Watermark">
+                    </div>
+                    <h3><i class="fas fa-location-dot"></i> Location</h3>
+                    <p>In Our Customer Heart💖</p>
+                    <p>123 Dreamy Lane, Flavor Town</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-watermark">
+                        <img src="https://res.cloudinary.com/dvda53sdv/image/upload/v1749747065/CATS_rqph8q.gif" alt="Watermark">
+                    </div>
+                    <h3><i class="fas fa-clock"></i> Hours</h3>
+                    <p>Monday-Friday: 6pm-9pm</p>
+                    <p>Saturday-Sunday: 12pm-9pm</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-watermark">
+                        <img src="https://res.cloudinary.com/dvda53sdv/image/upload/v1749747065/CATS_rqph8q.gif" alt="Watermark">
+                    </div>
+                    <h3><i class="fas fa-phone"></i> Contact</h3>
+                    <p>Phone: 7603973652, 7010172729</p>
+                    <p>Phone: 9994807942, 6379355070</p>
+                    <p>Email: whimsycafeofficial@gmail.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal fancy-modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2><i class="fas fa-sparkles"></i> Complete Your Order</h2>
+                <p>We're almost ready to prepare your magical milkshakes!</p>
+            </div>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="address"><i class="fas fa-home"></i> Delivery Address</label>
+                    <textarea id="address" placeholder="Where should we deliver your magical treats?" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-paper-plane"></i> Place Order
+                </button>
+            </form>
+            <div class="modal-footer">
+                <p><i class="fas fa-lock"></i> Your information is secure with us</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <h2 class="footer-brand">Whimsy Café</h2>
+            <p class="footer-tagline">Where every milkshake starts with a dream.</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+            
+            <p class="footer-bottom">&copy; 2025 Whimsy Café. All rights reserved.</p>
+        </div>
+        <div class="footer-decoration">
+            <div class="deco-circle pink"></div>
+            <div class="deco-circle purple"></div>
+        </div>
+    </footer>
+
+    <script src="js/customer.js"></script>
+</body>
+</html>

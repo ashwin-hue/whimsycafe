@@ -1,0 +1,417 @@
+:root {
+    --yellow: #F8E9A1;
+    --red: #F76C6C;
+    --light-blue: #A8D0E6;
+    --blue: #374785;
+    --dark-blue: #24305E;
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    line-height: 1.6;
+}
+
+/* Login Modal */
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(36, 48, 94, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.login-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: slideDown 0.5s ease-out;
+    text-align: center;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.login-form h2 {
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--light-blue);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(55, 71, 133, 0.2);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--dark-blue) 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--blue) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--dark-blue) 100%);
+    color: var(--yellow);
+    text-align: center;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 20px rgba(55, 71, 133, 0.3);
+    position: relative;
+}
+
+.header-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+header h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header h1:hover::after {
+    transform: scaleX(1);
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.user-controls {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#currentUser {
+    font-size: 0.9rem;
+    color: var(--yellow);
+}
+
+.logout-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn:hover {
+    background: #e05555;
+    transform: rotate(180deg);
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1300px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Orders Section */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.orders h2 {
+    font-size: 1.8rem;
+    color: var(--dark-blue);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.refresh-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.refresh-btn:hover {
+    background: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Orders Container */
+.orders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Order Card Styles */
+.order {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(55, 71, 133, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.order::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--red), var(--yellow));
+}
+
+.order:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(55, 71, 133, 0.2);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed var(--light-blue);
+}
+
+.order-header h3 {
+    margin: 0;
+    color: var(--blue);
+    font-size: 1.2rem;
+}
+
+.order-header span {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.order-details p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.order-details strong {
+    color: var(--blue);
+}
+
+.order-items {
+    margin: 1rem 0;
+}
+
+.order-items h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: var(--blue);
+}
+
+.order-items ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.order-items li {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.order-total {
+    font-weight: 600;
+    color: var(--blue);
+    margin: 1rem 0;
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+.complete-btn {
+    width: 100%;
+    padding: 0.7rem;
+    background: linear-gradient(135deg, var(--yellow) 0%, #f0dc8b 100%);
+    color: var(--dark-blue);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.complete-btn:hover {
+    background: linear-gradient(135deg, #f0dc8b 0%, var(--yellow) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Floating Buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.add-order-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--red) 0%, #e55b5b 100%);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(247, 108, 108, 0.3);
+}
+
+.add-order-btn:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 16px rgba(247, 108, 108, 0.4);
+}
+
+/* Empty State */
+.orders-container > p {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--blue);
+    font-size: 1.1rem;
+    padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .user-controls {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .orders-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .floating-buttons {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .add-order-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+}
