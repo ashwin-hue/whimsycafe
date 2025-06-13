@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // Load drinks from server
-    const response = await fetch('/api/drinks');
+    const response = await fetch('https://whimsy-api.onrender.com/api/drinks');
     const drinks = await response.json();
 
     const drinksContainer = document.getElementById('drinks-container');
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
 
         try {
-            const response = await fetch('/api/orders', {
+            const response = await fetch('https://whimsy-api.onrender.com/api/orders', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(order)
