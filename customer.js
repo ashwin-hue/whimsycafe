@@ -1,7 +1,21 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    // Load drinks from server
-    const response = await fetch('https://whimsy-api.onrender.com/api/drinks');
-    const drinks = await response.json();
+    const loadingScreen = document.getElementById('loading-screen');
+
+    let drinks = [];
+
+    try {
+        const response = await fetch('https://whimsy-api.onrender.com/api/drinks');
+        drinks = await response.json();
+    } catch (error) {
+        console.error("Error loading drinks:", error);
+        toast.innerHTML = `<i class="fas fa-exclamation-circle"></i> Waking up the magic... Please wait!`;
+        toast.classList.add('show');
+    } finally {
+        // Hide loading screen
+        setTimeout(() => {
+            loadingScreen.classList.add('fade-out');
+        }, 800);
+    }
 
     const drinksContainer = document.getElementById('drinks-container');
     const cartItems = document.getElementById('cart-items');
@@ -53,6 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             cartItem.innerHTML = `
                 <span>${item.name}</span>
                 <span>₹${item.price.toFixed(2)}</span>
+                <button class="remove-btn" data-id="${item._id}" title="Remove"><i class="fas fa-trash-alt"></i></button>
             `;
             cartItems.appendChild(cartItem);
             total += item.price;
@@ -60,8 +75,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         cartTotal.textContent = total.toFixed(2);
         document.querySelector('.cart-count').textContent = cart.length;
-
         floatingCart.style.display = cart.length > 0 ? 'flex' : 'none';
+
+        // 🗑️ Add event listeners for remove buttons
+        document.querySelectorAll('.remove-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const idToRemove = e.currentTarget.getAttribute('data-id');
+                cart = cart.filter(item => item._id !== idToRemove);
+                updateCart(); // Refresh cart view
+                showToast('Item removed from cart');
+            });
+        });
     }
 
     function showToast(message) {
