@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Whimsy Cafe - Magical Milkshakes</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -32,9 +32,10 @@
   </div>
 
   <ul class="nav-links">
+    <li><a href="#about"><i class="fas fa-heart"></i> Our Story</a></li>
     <li><a href="#menu"><i class="fas fa-glass-whiskey"></i> Menu</a></li>
     <li><a href="#testimonials"><i class="fas fa-star"></i> Reviews</a></li>
-    <li><a href="#about"><i class="fas fa-heart"></i> Our Story</a></li>
+    <li><a href="#Game"><i class="fas fa-gamepad"></i> Try Our Game</a></li>
     <li><a href="#contact"><i class="fas fa-map-marker-alt"></i> Find Us</a></li>
   </ul>
 
@@ -45,9 +46,10 @@
 
   <!-- Mobile nav menu -->
   <ul id="hm-links" class="mobile-nav-links">
+    <li><a href="#about"><i class="fas fa-heart"></i> Our Story</a></li>
     <li><a href="#menu"><i class="fas fa-glass-whiskey"></i> Menu</a></li>
     <li><a href="#testimonials"><i class="fas fa-star"></i> Reviews</a></li>
-    <li><a href="#about"><i class="fas fa-heart"></i> Our Story</a></li>
+    <li><a href="#Game"><i class="fas fa-gamepad"></i> Try Our Game</a></li>
     <li><a href="#contact"><i class="fas fa-map-marker-alt"></i> Find Us</a></li>
   </ul>
 </nav>
@@ -104,6 +106,68 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+    <div class="section-header">
+        <h2><i class="fas fa-star"></i> What Our Customers Say</h2>
+        <p>Hear the magic from those who've tasted our creations</p>
+    </div>
+    
+    <div class="testimonials-container">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                   Well made Oreo milkshake, happy to be the 1st customer. Very affordable price too. Quality was too good
+                </p>
+            </div>
+            <div class="testimonial-author">
+                <img src="https://res.cloudinary.com/dvda53sdv/image/upload/v1750510679/mouthopen_ov3zef.png" alt="customer" class="author-img">
+                <div class="author-info">
+                    <h4>Jayanth M</h4>
+                    <p>returning Customer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonial -->
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">
+                     I'm heppy to be the customer of Whimsy Cafe and eager to order other products from the menu 
+                </p>
+            </div>
+            <div class="testimonial-author">
+                <img src="https://res.cloudinary.com/dvda53sdv/image/upload/v1750510679/mouthopen_ov3zef.png" alt="customer" class="author-img">
+                <div class="author-info">
+                    <h4>Bharadwaj</h4>
+                    <p>Customer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial-cta" id="Game">
+        <p>Try Our New Game</p>
+  <button class="btn-secondary" id="leave-review-btn" onclick="window.open('https://hungrykitty.netlify.app/', '_blank')">
+    🎮 Hungry Cat
+  </button>
+    </div>
+</section>
+
         <!-- Cart Section -->
         <section class="cart-section" id="cart-section">
             <div class="cart-instructions">
@@ -141,7 +205,7 @@
                     </div>
                     <h3><i class="fas fa-location-dot"></i> Location</h3>
                     <p>In Our Customer Heart💖</p>
-                    <p>Kolathur, Perambur, Villivakkam and Vinayagapuram</p>
+                    <p>123 Dreamy Lane, Flavor Town</p>
                 </div>
                 <div class="contact-card">
                     <div class="contact-watermark">
@@ -202,7 +266,7 @@
             <p class="footer-tagline">Where every milkshake starts with a dream.</p>
             
             <div class="social-links">
-                <a href="https://www.instagram.com/whimsy.cafe?igsh=MnZhN3ZmaWQwc2M0"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
@@ -221,6 +285,6 @@
         </div>
     </footer>
 
-    <script src="customer.js"></script>
+    <script src="js/customer.js"></script>
 </body>
 </html>
