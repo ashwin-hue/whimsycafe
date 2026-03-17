@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let drinks = [];
 
     try {
-        const response = await fetch('https://whimsy-api.onrender.com/api/drinks');
+        const response = await fetch('https://whimsycafe.onrender.com/api/drinks');
         drinks = await response.json();
     } catch (error) {
         console.error("Error loading drinks:", error);
