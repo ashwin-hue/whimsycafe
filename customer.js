@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const drinkElement = document.createElement('div');
         drinkElement.className = 'drink';
         drinkElement.innerHTML = `
-            <img src="${drink.imageUrl}" alt="${drink.name}" loading="lazy">
+            <img src="${drink.image}" alt="${drink.name}" loading="lazy">
             <h3>${drink.name}</h3>
             <p>${drink.description}</p>
             <span class="price">₹${drink.price.toFixed(2)}</span>
