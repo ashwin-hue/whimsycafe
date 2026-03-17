@@ -2,29 +2,26 @@ const express = require('express');
 const cors = require('cors');
 const { MongoClient, ObjectId } = require('mongodb');
 const path = require('path');
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-const uri = "mongodb+srv://whimsycafeofficial:WUF9GW8HctTyNkyj@cluster0.xf19ewb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://whimsy:whimsy123@cluster0.kx67hbl.mongodb.net/?appName=Cluster0";
 const client = new MongoClient(uri);
 
 // Serve HTML files
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public','views', 'index.html'));
 });
-
 app.get('/customer', (req, res) => {
     res.sendFile(path.join(__dirname, 'public','views', 'index.html'));
 });
-
 app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'public','views','admin.html'));
 });
 
-// API endpoints remain the same as before
+// API endpoints
 app.get('/api/drinks', async (req, res) => {
     try {
         await client.connect();
