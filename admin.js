@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
                 button.disabled = true;
                 
-                const response = await fetch(`https://whimsy-api.onrender.com/api/orders/${orderId}`, {
+                const response = await fetch(`https://whimsycafe.onrender.com/api/orders/${orderId}`, {
                     method: 'DELETE'
                 });
                 
